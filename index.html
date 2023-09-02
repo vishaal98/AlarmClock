@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Alarm Clock</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  <!-- custom styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Display clock -->
+        <div class="clock">
+          <div id="clock-face" class="display-1">00:00:00 AM</div>
+        </div>
+        <!-- Set the alarm time -->
+        <div class="set-alarm">
+          <input type="number" id="alarm-hours" placeholder="HH" min="1" max="12" class="form-control">
+          <input type="number" id="alarm-minutes" placeholder="MM" min="0" max="59" class="form-control">
+          <input type="number" id="alarm-seconds" placeholder="SS" min="0" max="59" class="form-control">
+          <select id="alarm-am-pm" class="form-select">
+            <option value="AM">AM</option>
+            <option value="PM">PM</option>
+          </select>
+          <button onclick="setAlarm()" class="btn btn-primary">Add Alarm</button>
+        </div>
+        <!-- Display the list of alarms -->
+        <div class="alarms-list">
+          <h2 class="display-7">Alarms</h2>
+          <ul id="alarms-ul" class="list-group"></ul>
+        </div>
+      </div>
+
+      <!-- Modal to appear when alarm rings -->
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+            <h2>Alarm</h2>
+            <p>The alarm is ringing!</p>
+            <button id="stopAlarmButton" class="close">CLOSE</button>
+        </div>
+    </div>
+  <!-- custom JavaScript file -->
+  <script src="script.js"></script>
+</body>
+</html>
